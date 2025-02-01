@@ -1,0 +1,10 @@
+export const app_routes = {
+  root: "/",
+  dashboard: {
+    main: "/dashboard",
+    overview: {
+      title: "Overview",
+      main: "/dashboard/overview",
+    },
+  },
+};
