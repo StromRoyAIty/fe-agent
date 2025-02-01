@@ -6,5 +6,9 @@ export const app_routes = {
       title: "Overview",
       main: "/dashboard/overview",
     },
+    agreements: {
+      title: "Agreements",
+      main: "/dashboard/agreements",
+    },
   },
 };
