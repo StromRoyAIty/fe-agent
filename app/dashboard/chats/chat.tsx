@@ -46,7 +46,7 @@ export const Chat = (obj) => {
           Send
         </Button>
       </div>
-      <div>
+      <div className="mt-2">
         {messages.length > 0 &&
           messages.map((message) => {
             return message.map((msg) => {

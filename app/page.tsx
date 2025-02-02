@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <div className="flex items-center justify-center min-h-screen">
         <TypographyH2>
-          Platform that helps you to get resonable predictions for your business
+          Platform that helps you to get reasonable predictions for your business
           from AI Agents
         </TypographyH2>
       </div>
