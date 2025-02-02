@@ -21,8 +21,10 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
+import { useRouter } from "next/navigation";
+
 const formSchema = z.object({
-  agents: z.array(z.string()),
+  agents: z.string(),
 });
 
 export type FormType = z.infer<typeof formSchema>;
@@ -30,23 +32,26 @@ export default function Page() {
   const form = useForm<FormType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      agents: [],
+      agents: "",
     },
   });
+
   const agents = ["tourist", "farmer"];
+  const value = form.watch("agents");
+  console.log(value);
+  const router = useRouter();
 
   const { handleSubmit, control } = form;
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    router.push(`/dashboard/chats/agents/${value}`);
+  };
   return (
     <>
       <div className="w-full">
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="w-2/3 space-y-6"
-          >
+          <form onSubmit={handleSubmit(onSubmit)} className="w-2/3 space-y-6">
             <FormField
-              control={form.control}
+              control={control}
               name="agents"
               render={({ field }) => (
                 <FormItem>
@@ -60,7 +65,9 @@ export default function Page() {
                     <SelectContent>
                       {agents.map((agent) => (
                         <SelectGroup key={agent} title={agent}>
-                          <SelectItem value={agent}>{agent}</SelectItem>
+                          <SelectItem value={agent}>
+                            {agent.toUpperCase()}
+                          </SelectItem>
                         </SelectGroup>
                       ))}
                     </SelectContent>
