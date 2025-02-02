@@ -10,6 +10,7 @@ import { Providers } from "@/components/providers/main";
 import Link from "next/link";
 //import { TypographyH3 } from "@/components/ui/typography";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import { TypographyH3 } from "@/components/ui/typography";
 
 const HEADER_HEIGHT = "4rem";
 export const metadata: Metadata = {
@@ -45,8 +46,8 @@ export default async function RootLayout({
                     height={30}
                     width={30}
                   />
-                  <TypographyH3></TypographyH3>
                    */}
+                <TypographyH3>AI AGENTS</TypographyH3>
               </Link>
             </div>
             <div className="flex flex-auto items-center gap-1 md:gap-8"></div>

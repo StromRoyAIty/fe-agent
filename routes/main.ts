@@ -10,5 +10,9 @@ export const app_routes = {
       title: "Agreements",
       main: "/dashboard/agreements",
     },
+    start: {
+      title: "Start",
+      main: "/dashboard/getting-started",
+    }
   },
 };

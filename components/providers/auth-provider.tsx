@@ -24,7 +24,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
     }
     if (pathname === app_routes.root) {
       if (isConnected) {
-        router.push(app_routes.dashboard.overview.main);
+        router.push(app_routes.dashboard.start.main);
       }
     }
   }, [isDisconnected, isConnected, router, pathname]);
